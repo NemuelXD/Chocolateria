@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable en Bootstrap 4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #contextMenu {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Arte y Dulzura</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Más Opciones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Opción 1</a>
+                        <a class="dropdown-item" href="#">Opción 2</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Opción 3</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>BIENVENIDO A NUESTRO SITIO WEB:</h1>
+        <div id="target" style="border: 1px solid #ccc; padding: 20px; cursor: context-menu;">
+            Si quieres saber mas de nosotros haz clic derecho aquí.
+        </div>
+    </div>
+
+    <div id="contextMenu" class="dropdown-menu">
+        <a class="dropdown-item" href="#">Opción 1</a>
+        <a class="dropdown-item" href="#">Opción 2</a>
+        <a class="dropdown-item" href="#">Opción 3</a>
+    </div>
+
+    <div class="jumbotron"
+        style="background-image: url(imagenesVideoSonido/choc01.jpg); background-repeat: no-repeat; background-size: cover;">
+        <h2 style="color: whitesmoke; font-weight: bold;">
+            CHOCOLATERIA "ARTE Y DULZURA"
+        </h2>
+        <p style="color: white;">
+            En nuestra chocolatería, nos dedicamos a crear momentos dulces y memorables para todos nuestros clientes.
+            Ofrecemos una exquisita variedad de chocolates artesanales, pasteles deliciosos y bebidas que deleitarán tus
+            sentidos. Cada uno de nuestros productos está hecho con amor y dedicación, utilizando ingredientes de la más
+            alta calidad.
+        </p>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalLive">
+                        Contactanos
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel"
+            style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="inputPassword4">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCity" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">pais</label>
+                                <select id="inputState" class="form-select">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="inputZip" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                        </form>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Woo-hoo, ¡Muchas Gracias por su visita!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>
+                CHOCOLATES
+            </h2>
+            <img src="imagenesVideoSonido/choc02.jpg" class="img-thumbnail" alt="..."
+                style="transition: transform 0.3s ease;">
+            <p style="text-align: justify;">
+                En Arte y Dulzura, nuestros chocolates son el corazón de nuestra oferta. Elaborados con los mejores
+                ingredientes, cada pieza es una obra de arte que combina sabor y calidad. Ofrecemos una amplia variedad
+                de chocolates, desde los clásicos oscuros y con leche hasta opciones más innovadoras con rellenos
+                exquisitos y combinaciones únicas.
+
+                Nuestros chocolates son perfectos para cualquier ocasión, ya sea un regalo especial, una celebración o
+                simplemente para disfrutar un momento dulce. Cada bocado es una experiencia que deleita los sentidos y
+                deja una impresión duradera.
+
+                Ven y descubre la magia de nuestros chocolates en Arte y Dulzura. ¡Te esperamos para endulzar tu día!
+            </p>
+            <p>
+                <a class="btn" href="https://es.wikipedia.org/wiki/Felis_silvestris_catus" target=”_blank”>Ver mas
+                    detalles »</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>
+                PASTELES
+            </h2>
+            <img src="imagenesVideoSonido/choc03.jpg" class="img-thumbnail" alt="...">
+            <p style="text-align: justify;">
+                Usted
+                ahora de pasteles
+                Copilot
+                En Arte y Dulzura, nuestros pasteles son una verdadera obra de arte. Cada uno de ellos es elaborado con
+                los ingredientes más frescos y de la mejor calidad, asegurando un sabor inigualable y una presentación
+                impecable. Ofrecemos una amplia variedad de pasteles, desde los clásicos de chocolate y vainilla hasta
+                opciones más sofisticadas con frutas frescas y cremas exquisitas.
+
+                Nuestros pasteles son perfectos para cualquier ocasión, ya sea un cumpleaños, una boda, una celebración
+                especial o simplemente para disfrutar en cualquier momento. Cada bocado es una experiencia que deleita
+                los sentidos y deja una impresión duradera.
+
+                Ven y descubre la magia de nuestros pasteles en Arte y Dulzura. ¡Te esperamos para endulzar tu día con
+                nuestras creaciones únicas!
+            </p>
+            <p>
+                <a class="btn" href="https://es.wikipedia.org/wiki/Canis_familiaris" target=”_blank”>Ver mas
+                    detalles »</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>
+                BEBIDAS
+            </h2>
+            <img src="imagenesVideoSonido/choc04.jpg" class="img-thumbnail" alt="...">
+            <p>
+                En Arte y Dulzura, nuestras bebidas son el complemento perfecto para cualquier ocasión. Ofrecemos una
+                selección de bebidas que van desde el clásico chocolate caliente, preparado con nuestro mejor cacao,
+                hasta cafés especiales y tés aromáticos. Cada bebida es elaborada con ingredientes de alta calidad para
+                asegurar una experiencia única y deliciosa.
+
+                Ya sea que busques una bebida reconfortante en un día frío o algo refrescante para acompañar nuestros
+                pasteles y chocolates, en Arte y Dulzura encontrarás la opción ideal. Ven y disfruta de nuestras bebidas
+                en un ambiente acogedor y lleno de dulzura.
+
+                ¡Te esperamos para compartir un momento especial con nuestras deliciosas bebidas!
+            </p>
+            <p>
+                <a class="btn" href="https://es.wikipedia.org/wiki/Psittacoidea" target=”_blank”>Ver mas detalles
+                    »</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center mt-5">Nuestra Ubicacion</h2>
+        <div class="card mt-3">
+            <div class="card-body">
+                <button id="getLocationBtn" class="btn btn-primary mb-3">Obtener Ubicacion</button>
+                <p id="status" class="text-muted"></p>
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <center>
+        <h1>Bienvenido a Arte y Dulzura</h1>
+        <h2>Disfruta de nuestro video</h2>
+        <video width="600" controls>
+            <source src="imagenesVideoSonido/videoChocolateria.mp4" type="video/mp4">
+        </video>
+    </center>
+
+    <!-- Bootstrap JavaScript y jQuery (Versión 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#target').on('contextmenu', function (e) {
+                e.preventDefault();
+                $('#contextMenu').css({
+                    display: 'block',
+                    left: e.pageX,
+                    top: e.pageY
+                });
+            });
+            $(document).on('click', function () {
+                $('#contextMenu').hide();
+            });
+        });
+    </script>
+
+    <script>
+        let map;
+        let userMarker;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: { lat: 0, lng: 0 },
+            });
+        }
+        document.getElementById("getLocationBtn").addEventListener("click", function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, error);
+            } else {
+                document.getElementById("status").textContent = "La geolocalizacion no es soportada por tu navegador";
+            }
+        });
+
+        function success(position) {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            document.getElementById("status").textContent = `Latitud: ${lat}, Longitud:${lng}`;
+
+            const userLocation = new google.maps.LatLng(lat, lng);
+
+            if (!userMarker) {
+                userMarker = new google.maps.Marker({
+                    position: userLocation,
+                    map: map,
+                    title: "Tu ubicacion",
+                });
+            } else {
+                userMarker.setPosition(userLocation);
+            }
+            map.setCenter(userLocation);
+        }
+        function error() {
+            document.getElementById("status").textContent = "No se pudo obtener tu ubicacion.";
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqcUFxAyB8x36j12DGApOvYzcSk0-rNkA&callback=initMap"
+        async defer></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#loadButton').click(function () {
+                $('#spinnerContainer').show();
+                setTimeout(function () {
+                    $('#spinnerContainer').hide();
+                    alert('Datos cargados!');
+                }, 2000);
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+    <div class="container mt-5">
+        <h2 class="text-center">¡Adivina el Número! y Llevate un descuento del 20% gratis.</h2>
+        <p class="text-center">Estoy pensando en un número del 1 al 10. ¿Puedes adivinar cuál es?</p>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="number" id="guessInput" class="form-control" placeholder="Introduce tu número">
+                    <div class="input-group-append">
+                        <button id="guessButton" class="btn btn-primary">Adivinar</button>
+                    </div>
+                </div>
+                <div id="result" class="text-center mt-3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+            $("#guessButton").click(function () {
+                const userGuess = parseInt($("#guessInput").val(), 10);
+                if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+                    $("#result").html('<div class="alert alert-warning">Por favor, introduce un número válido entre 1 y 10.</div>');
+                } else if (userGuess === randomNumber) {
+                    $("#result").html('<div class="alert alert-success">¡Correcto! El número era ' + randomNumber + '.</div>');
+                } else {
+                    $("#result").html('<div class="alert alert-danger">Incorrecto. Intenta de nuevo.</div>');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
